@@ -1,14 +1,7 @@
 let stringIn = ""
 let command = ""
-function leadingZero (num: number) {
-    if (num < 10) {
-        return "0" + num
-    } else {
-        return convertToText(num)
-    }
-}
-basic.forever(function () {
-    stringIn = serial.readUntil(serial.delimiters(Delimiters.NewLine))
+serial.onDataReceived(serial.delimiters(Delimiters.CarriageReturn), function () {
+    stringIn = serial.readUntil(serial.delimiters(Delimiters.CarriageReturn))
     if (stringIn.length >= 2) {
         command = stringIn.substr(0, 2)
         if (command == "st") {
