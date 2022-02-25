@@ -19,9 +19,9 @@ serial.onDataReceived(serial.delimiters(Delimiters.CarriageReturn), function () 
         }
         if (command == "sd") {
             DS3231.dateTime(
-            parseFloat(stringIn.substr(2, 2)),
+            parseFloat(stringIn.substr(6, 4)),
             parseFloat(stringIn.substr(4, 2)),
-            parseFloat(stringIn.substr(6, 2)),
+            parseFloat(stringIn.substr(2, 2)),
             DS3231.day(),
             DS3231.hour(),
             DS3231.minute(),
