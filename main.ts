@@ -36,7 +36,7 @@ function setTime () {
     DS3231.date(),
     DS3231.day(),
     parseFloat(date),
-    parseFloat(stringIn.substr(4, 2)),
+    parseFloat(minute),
     0
     )
     basic.showNumber(DS3231.hour())
