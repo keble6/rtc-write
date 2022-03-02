@@ -42,7 +42,7 @@ function setTime () {
     basic.showNumber(DS3231.hour())
     basic.showNumber(DS3231.minute())
 }
-serial.onDataReceived(serial.delimiters(Delimiters.CarriageReturn), function () {
+function setTimeDate () {
     stringIn = serial.readUntil(serial.delimiters(Delimiters.CarriageReturn))
     command = stringIn.substr(0, 2)
     if (command == "st") {
@@ -51,4 +51,7 @@ serial.onDataReceived(serial.delimiters(Delimiters.CarriageReturn), function () 
     if (command == "sd") {
         setDate()
     }
+}
+serial.onDataReceived(serial.delimiters(Delimiters.CarriageReturn), function () {
+    setTimeDate()
 })
