@@ -35,7 +35,7 @@ function setTime () {
     DS3231.month(),
     DS3231.date(),
     DS3231.day(),
-    parseFloat(date),
+    parseFloat(hour),
     parseFloat(minute),
     0
     )
